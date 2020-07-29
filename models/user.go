@@ -31,7 +31,7 @@ func (user *User) CreateSession() (session Session, err error)  {
 	return
 }
 
-func (user *User) Create (err error)  {
+func (user *User) Create () (err error) {
 	statement := "insert into users (uuid, name, email, password, created_at) values (?, ?, ?, ?, ?)"
 	stmtin, err := Db.Prepare(statement)
 	if err != nil {

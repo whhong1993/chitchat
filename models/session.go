@@ -35,7 +35,7 @@ func (session *Session) DeleteByUUID() (err error) {
 	return
 }
 
-func (session Session) User() (user User, err error)  {
+func (session Session) User() (user User, err error) {
 	user = User{}
 	err = Db.QueryRow("SELECT id, uuid, name, email, created_at FROM users WHERE id = ?", session.UserId).
 		Scan(&user.Id, &user.Uuid, &user.Name, &user.Email, &user.CreatedAt)
