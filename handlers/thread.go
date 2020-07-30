@@ -11,7 +11,7 @@ func NewThread(writer http.ResponseWriter, request *http.Request)  {
 	if (err != nil) {
 		http.Redirect(writer, request, "/login", 302)
 	} else {
-		generateHTML(writer, nil, "layput", "auth.navbar", "new.thread")
+		generateHTML(writer, nil, "layout", "auth.navbar", "new.thread")
 	}
 }
 
@@ -22,15 +22,16 @@ func CreateThread(writer http.ResponseWriter, request *http.Request)  {
 	} else {
 		err = request.ParseForm()
 		if err != nil {
-			fmt.Println("Cannot parse form")
+			danger(err, "Cannot parse form")
 		}
 		user, err := sess.User()
 		if err != nil {
-			fmt.Println("Cannot get user from session")
+			warning(err, "Cannot get user from session")
 		}
 		topic := request.PostFormValue("topic")
+		fmt.Println(topic)
 		if _, err := user.CreateThread(topic); err != nil {
-			fmt.Println("Cannot create thread")
+			danger(err, "Cannot create thread")
 		}
 		http.Redirect(writer, request, "/", 302)
 	}
@@ -41,7 +42,7 @@ func ReadThread(writer http.ResponseWriter, request *http.Request)  {
 	uuid := vals.Get("id")
 	thread, err := models.ThreadByUUID(uuid)
 	if err != nil {
-		fmt.Println("Cannot read thread")
+		error_message(writer, request, "Cannot read thread")
 	} else {
 		_, err := session(writer, request)
 		if err != nil {

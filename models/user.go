@@ -122,7 +122,7 @@ func (user *User) CreateThread(topic string) (conv Thread, err error) {
 	defer stmtin.Close()
 
 	uuid := createUUID()
-	stmtin.Exec(uuid, topic, user.Id, uuid)
+	stmtin.Exec(uuid, topic, user.Id, time.Now())
 
 	stmtout, err := Db.Prepare("select id, uuid, topic, user_id, created_at from threads where uuid = ?")
 	if err != nil {

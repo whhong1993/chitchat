@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"chitchat/models"
-	"fmt"
 	"net/http"
 )
 
@@ -18,7 +17,7 @@ func Signup(writer http.ResponseWriter, request *http.Request) {
 func SignupAccount(writer http.ResponseWriter, request *http.Request)  {
 	err := request.ParseForm()
 	if err != nil {
-		fmt.Println("Cannot parse form")
+		danger(err, "Cannot parse form")
 	}
 	user := models.User{
 		Name:	request.PostFormValue("name"),
@@ -26,7 +25,7 @@ func SignupAccount(writer http.ResponseWriter, request *http.Request)  {
 		Password: request.PostFormValue("password"),
 	}
 	if err := user.Create(); err != nil {
-		fmt.Println("Cannot create user")
+		danger(err, "Cannot create user")
 	}
 	http.Redirect(writer, request, "/login", 302)
 }
@@ -35,12 +34,12 @@ func Authenticate(writer http.ResponseWriter, request *http.Request)  {
 	err := request.ParseForm()
 	user, err := models.UserByEmail(request.PostFormValue("email"))
 	if err != nil {
-		fmt.Println("Cannot find user")
+		danger(err, "Cannot find user")
 	}
 	if user.Password == models.Encrypt(request.PostFormValue("password")) {
 		session, err := user.CreateSession()
 		if err != nil {
-			fmt.Println("Cannot create session")
+			danger(err, "Cannot create session")
 		}
 
 		cookie := http.Cookie{
@@ -57,10 +56,16 @@ func Authenticate(writer http.ResponseWriter, request *http.Request)  {
 
 func Logout(writer http.ResponseWriter, request *http.Request)  {
 	cookie, err := request.Cookie("_cookie")
+	info("coolkie.value:" , cookie.Value)
 	if err != http.ErrNoCookie {
-		fmt.Println("Failed to get cookie")
 		session := models.Session{Uuid:cookie.Value}
-		session.DeleteByUUID()
+		info("session:", session)
+		err = session.DeleteByUUID()
+		if err != nil {
+			danger(err, "Failed")
+		}
+	} else {
+		warning(err, "Failed to get cookie")
 	}
 	http.Redirect(writer, request, "/", 302)
 }

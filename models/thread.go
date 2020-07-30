@@ -64,7 +64,7 @@ func Threads() (threads []Thread, err error)  {
 
 func ThreadByUUID(uuid string) (conv Thread, err error) {
 	conv = Thread{}
-	err = Db.QueryRow("SELECT id, uuid, topic, user_id, created_at FROM threads WHERE uuid = ?", uuid).Scan(
+	Db.QueryRow("SELECT id, uuid, topic, user_id, created_at FROM threads WHERE uuid = ?", uuid).Scan(
 		&conv.Id, &conv.Uuid, &conv.Topic, &conv.UserId, &conv.CreatedAt)
 	return
 }

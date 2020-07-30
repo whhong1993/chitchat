@@ -2,21 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba7a3ccf-400c-4886-bd2e-497bf46b4e1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/handlers/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/thread.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/auth.layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/auth.navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/post.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/auth.thread.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/new.thread.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/thread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/helper.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/helper.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/thread.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/thread.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/session.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/session.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/thread.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/thread.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +72,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -198,10 +200,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="0" y="23" width="1280" height="724" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1591084168068" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1596018435015">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1596093515536">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1280.800/-136.-1080.1920.1080@0.0.1280.800" timestamp="1596018435015" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1280.800/-136.-1080.1920.1080@0.0.1280.800" timestamp="1596093515536" />
     <state width="500" height="445" key="SwitcherDM/0.0.1280.800@0.0.1280.800" timestamp="1596004025259" />
     <state x="484" y="153" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1595927478813">
       <screen x="0" y="0" width="1280" height="800" />

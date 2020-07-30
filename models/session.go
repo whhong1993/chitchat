@@ -24,7 +24,7 @@ func (session *Session) Check() (valid bool, err error) {
 }
 
 func (session *Session) DeleteByUUID() (err error) {
-	statement := "DELETE FROM users WHERE uuid = ?"
+	statement := "DELETE FROM sessions WHERE uuid = ?"
 	stmt, err := Db.Prepare(statement)
 	if err != nil {
 		return
@@ -35,7 +35,7 @@ func (session *Session) DeleteByUUID() (err error) {
 	return
 }
 
-func (session Session) User() (user User, err error) {
+func (session *Session) User() (user User, err error) {
 	user = User{}
 	err = Db.QueryRow("SELECT id, uuid, name, email, created_at FROM users WHERE id = ?", session.UserId).
 		Scan(&user.Id, &user.Uuid, &user.Name, &user.Email, &user.CreatedAt)
