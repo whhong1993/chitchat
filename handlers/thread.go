@@ -3,12 +3,13 @@ package handlers
 import (
 	"chitchat/models"
 	"fmt"
+	"github.com/nicksnyder/go-i18n/v2/i18n"
 	"net/http"
 )
 
 func NewThread(writer http.ResponseWriter, request *http.Request)  {
 	_, err := session(writer, request)
-	if (err != nil) {
+	if err != nil {
 		http.Redirect(writer, request, "/login", 302)
 	} else {
 		generateHTML(writer, nil, "layout", "auth.navbar", "new.thread")
@@ -40,10 +41,19 @@ func CreateThread(writer http.ResponseWriter, request *http.Request)  {
 func ReadThread(writer http.ResponseWriter, request *http.Request)  {
 	vals := request.URL.Query()
 	uuid := vals.Get("id")
+	info("Read thread id :" , uuid)
 	thread, err := models.ThreadByUUID(uuid)
+	info(thread, err)
+	msg := localizer.MustLocalize(&i18n.LocalizeConfig{
+		MessageID: "thread_not_found",
+	})
+	info(msg)
 	if err != nil {
-		error_message(writer, request, "Cannot read thread")
+		error_message(writer, request, msg)
 	} else {
+		if thread.Id == 0 {
+			error_message(writer, request, msg)
+		}
 		_, err := session(writer, request)
 		if err != nil {
 			generateHTML(writer, &thread, "layout", "navbar", "thread")

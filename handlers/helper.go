@@ -1,9 +1,11 @@
 package handlers
 
 import (
+	. "chitchat/config"
 	"chitchat/models"
 	"errors"
 	"fmt"
+	"github.com/nicksnyder/go-i18n/v2/i18n"
 	"html/template"
 	"log"
 	"net/http"
@@ -12,8 +14,13 @@ import (
 )
 
 var logger *log.Logger
+var config *Configuration
+var localizer *i18n.Localizer
 
 func init() {
+	config = LoadConfig()
+	localizer = i18n.NewLocalizer(config.LocalBundle, config.App.Language)
+
 	file, err := os.OpenFile("logs/chitchat.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		log.Fatalln("Failed to open log file", err)

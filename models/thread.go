@@ -64,15 +64,15 @@ func Threads() (threads []Thread, err error)  {
 
 func ThreadByUUID(uuid string) (conv Thread, err error) {
 	conv = Thread{}
-	Db.QueryRow("SELECT id, uuid, topic, user_id, created_at FROM threads WHERE uuid = ?", uuid).Scan(
-		&conv.Id, &conv.Uuid, &conv.Topic, &conv.UserId, &conv.CreatedAt)
+	Db.QueryRow("SELECT id, uuid, topic, user_id, created_at FROM threads WHERE uuid = ?", uuid).
+		Scan(&conv.Id, &conv.Uuid, &conv.Topic, &conv.UserId, &conv.CreatedAt)
 	return
 }
 
 func (thread *Thread) User() (user User) {
 	user = User{}
-	Db.QueryRow("SELECT id, uuid, name, email, created_at FROM users WHERE id = ?", thread.UserId).Scan(
-		&user.Id, &user.Uuid, &user.Name, &user.Email, &user.CreatedAt)
+	Db.QueryRow("SELECT id, uuid, name, email, created_at FROM users WHERE id = ?", thread.UserId).
+		Scan(&user.Id, &user.Uuid, &user.Name, &user.Email, &user.CreatedAt)
 	return
 }
 

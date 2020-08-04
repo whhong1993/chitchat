@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba7a3ccf-400c-4886-bd2e-497bf46b4e1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/handlers/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/auth.thread.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/new.thread.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/thread.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/helper.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/helper.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/index.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/thread.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/thread.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/session.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/session.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/thread.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/thread.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,15 +196,20 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="0" y="23" width="1280" height="724" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1591084168068" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1596093515536">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1596537136116">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1280.800/-136.-1080.1920.1080@0.0.1280.800" timestamp="1596093515536" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1280.800/-136.-1080.1920.1080@0.0.1280.800" timestamp="1596537136116" />
     <state width="500" height="445" key="SwitcherDM/0.0.1280.800@0.0.1280.800" timestamp="1596004025259" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1280.724/-136.-1057.1920.1057@0.23.1280.724" timestamp="1596444994629" />
     <state x="484" y="153" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1595927478813">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="484" y="153" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1280.800/-136.-1080.1920.1080@0.0.1280.800" timestamp="1595927478813" />
+    <state x="416" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596532858898">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="416" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800/-136.-1080.1920.1080@0.0.1280.800" timestamp="1596532858898" />
     <state x="183" y="143" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596011184699">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
